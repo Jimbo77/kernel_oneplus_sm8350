@@ -27,8 +27,8 @@ make -j$(nproc) -C $(pwd) O=$(pwd)/out LLVM=1 jimbok_defconfig
 
 make -j$(nproc) -C $(pwd) O=$(pwd)/out LLVM=1
 
-#cp $(pwd)/out/arch/$ARCH/boot/Image.gz $(pwd)/out/Image.gz
+cp $(pwd)/out/arch/$ARCH/boot/Image.gz $(pwd)/out/Image.gz
 #cp $(pwd)/out/arch/$ARCH/boot/Image.gz-dtb $(pwd)/out/Image.gz-dtb
 
-cp $(pwd)/out/arch/$ARCH/boot/Image $(pwd)/out/Image
+
 cat ${DTS_DIR}/vendor/qcom/*.dtb > $(pwd)/out/dtb.img
