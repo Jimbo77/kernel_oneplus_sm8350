@@ -1,6 +1,7 @@
 #!/bin/bash -x
 
 CHIPSET_NAME=lahaina
+OUTPUT_IMAGE=$1
 #VARIANT=$1
 #VERSION=$2
 
@@ -32,3 +33,7 @@ cp $(pwd)/out/arch/$ARCH/boot/Image.gz $(pwd)/out/Image.gz
 
 
 cat ${DTS_DIR}/vendor/qcom/*.dtb > $(pwd)/out/dtb.img
+
+cp $(pwd)/out/Image.gz ~/build/AnyKernel3
+cd ~/build/AnyKernel3; zip -r ../JimboK-$OUTPUT_IMAGE.zip *
+cp ~/build/"JimboK-$OUTPUT_IMAGE.zip" ~/Kernel_Test/OnePlus9Pro
